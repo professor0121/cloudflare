@@ -11,10 +11,9 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import { Request, } from 'express';
 
 export default {
-	async fetch(request:Request): Promise<Response> {
+	async fetch(request:Request,env:Env): Promise<Response> {
 		const url = new URL(request.url);
 		switch (url.pathname) {
 			case '/message':
