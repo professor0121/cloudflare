@@ -1,6 +1,71 @@
-header{
+header {
+    width: 100%;
     background: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}   
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+header .logo {
+    font-size: 30px;
+    color: white;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+header .profile {
+    color: wheat;
+}
+
+/* ✅ Hamburger */
+header .hamburger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+header .hamburger img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ✅ Mobile */
+@media (max-width: 786px) {
+    header .logo {
+        font-size: 20px;
+    }
+
+    header nav {
+        display: none; /* hide menu */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        padding: 10px;
+        width: 150px;
+    }
+
+    header nav.active {
+        display: flex; /* show when active */
+    }
+
+    header .hamburger {
+        display: block; /* show hamburger */
+    }
+
+    header .profile{
+        display: none;
+    }
+}

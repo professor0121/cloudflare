@@ -1,22 +1,28 @@
-const menu=[
-    {label:"about",link:"/about"},
-    {label:"profile",link:"/profile"},
-    {label:"contact",link:"/contact"}
+const menu = [
+    { label: "about", link: "/about" },
+    { label: "profile", link: "/profile" },
+    { label: "contact", link: "/contact" }
 ]
 
-const container=`
-<header>
-    <h1 class="logo">site tittle</h1>
-    <nav>
-    ${
-        menu.map(element => {
-            return `<a href=${element.link}>${element.label}</a>`;
-        })
-    }
-    </nav>
-    <div class="profile">profile</div>
-</header>
-`
 
-const Header=document.getElementById("header");
-Header.innerHTML=container;
+const container = `
+<header>
+  <h1 class="logo">site title</h1>
+  <nav>
+    ${menu.map(el => `<a href="${el.link}">${el.label}</a>`).join("")
+    }
+  </nav>
+  <button class=hamburger><img src="/assets/images/hamburger.png"/></button>
+  <div class="profile">profile</div>
+</header>
+`;
+
+const Header = document.getElementById("header");
+Header.innerHTML = container;
+
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector("nav");
+
+hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});

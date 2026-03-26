@@ -1,6 +1,13 @@
 @import url("./styles/header.css");
 
-html,body{
+/* ✅ Apply to ALL elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
 }
